@@ -1,0 +1,67 @@
+/* Estilo para el formulario */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: 2px solid #222121;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 10px; /* Esquinas redondeadas */
+    background-color:var(--clr1); /* Cambia el color de fondo del formulario a oscuro */
+    color: #fff; /* Cambia el color del texto a blanco */
+}
+
+/* Estilo para etiquetas de formulario con la clase "form-label" */
+.form-label {
+    margin-bottom: 20px;
+    color: var(--clr5); /* Cambia el color de las etiquetas */
+}
+
+/* Estilo para entradas de texto con la clase "form-input" */
+.form-input {
+    width: 90%;
+    padding: 10px; /* Espaciado interno mayor */
+    border: 1px solid var(--clr4); /* Cambia el color del borde */
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-radius: 5px; /* Esquinas redondeadas */
+    background-color: var(--clr5); /* Cambia el color de fondo de los inputs */
+    color: #000; /* Cambia el color del texto en los inputs */
+}
+
+/* Estilo para el menú desplegable (select) */
+.form-select {
+    width: 100%;
+    padding: 10px; /* Espaciado interno mayor */
+    border: 1px solid var(--clr4); /* Cambia el color del borde */
+    background-color: var(--clr5); /* Cambia el color de fondo del select */
+    color: #000; /* Cambia el color del texto en el select */
+}
+
+/* Estilo para el grupo de botones */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo para los botones */
+.form-button {
+    background-color: var(--clr4);
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+    color: #333; /* Cambia el color del texto en los botones a un tono más oscuro */
+}
+
+/* Estilo para el botón cuando se pasa el mouse por encima */
+.form-button:hover {
+    background-color: var(--clr3); /* Cambio de color de fondo al pasar el mouse */
+}

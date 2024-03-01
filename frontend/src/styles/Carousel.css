@@ -1,0 +1,25 @@
+.carousel-format {
+    position: relative;
+    text-align: center;
+  }
+  
+  .responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid #fff;
+  }
+  
+  .slide-text {
+    position:relative;
+    bottom:0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 18px;
+    color: var(--clr5);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding:10px;
+    width:100%;
+  }

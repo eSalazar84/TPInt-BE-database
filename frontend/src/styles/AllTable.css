@@ -1,0 +1,129 @@
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.table-container {
+  width: 80%;
+  overflow-x: auto;
+  border: 2px solid var(--clr3);
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-table th,
+.product-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid var(--clr3);
+}
+
+.product-table thead {
+  background-color: var(--clr2);
+  color: #fff;
+  text-align: center;
+}
+
+.product-table th {
+  font-weight: bold;
+}
+
+.product-table tbody tr:nth-child(even) {
+  background-color: #e0f3e0;
+}
+
+.product-table tbody tr:hover {
+  background-color: #d1ecd1;
+}
+
+.product-table h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--clr2);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/*MODAL*/
+/* .edit-form {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 90%;
+  background-color: #d1ecd1;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  background-color: var(--clr2);
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+} */
+
+/* Estilos para el cuadro de diálogo */
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 10px 30px 30px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dialog-content {
+  text-align: center;
+}
+
+.dialog button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: var(--clr1);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dialog button:hover {
+  background-color: var(--clr2);
+}
