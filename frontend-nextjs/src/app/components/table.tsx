@@ -45,13 +45,14 @@ async function Table() {
               <ButtonOptions
                 product={product.product}
                 icon={<AiFillEdit className="btn-options" />}
+                onclick={handleEdit}
               />
             </td>
             <td>
               <ButtonOptions
                 product={product.code}
                 icon={<AiFillDelete className="btn-options" />}
-                
+                onclick={handleDelete}
               />
             </td>
           </tr>

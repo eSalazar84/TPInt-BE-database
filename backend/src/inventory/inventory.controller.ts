@@ -1,18 +1,32 @@
 import {
-    Controller, Get, Post, Delete, Param, Body, HttpStatus, NotFoundException, ValidationPipe,
-    UsePipes, ParseIntPipe, Query, HttpException, Patch
+    Controller, Get, Post, Delete, Param, Body, HttpStatus, ValidationPipe,
+    UsePipes, ParseIntPipe, Query, HttpException, Patch, UseInterceptors, UploadedFile
 } from '@nestjs/common';
+import { FileInterceptor } from '@nestjs/platform-express';
 import { InventoryService } from './inventory.service';
 import { UpdateInventoryDto } from './dto/update-inventory.dto';
 import { CreateInventoryDto } from './dto/create-inventory.dto';
 import { Items } from '../common/enums';
 import { DeleteResult } from 'typeorm';
+import { diskStorage } from 'multer';
+import { extname } from 'path';
 
 
 
 @Controller('inventory')
 export class InventoryController {
     constructor(private readonly inventoryService: InventoryService) { }
+
+    @Post()
+    @UseInterceptors(FileInterceptor('image', {
+        storage: diskStorage({
+            destination: './uploads',
+            filename: (req, file, callback) => {
+                const randomName = Array(32).fill(null).map(() => (Math.round(Math.random() * 16)).toString(16)).join('');
+                return callback(null,`${randomName}${extname(file.originalname)}`)
+            }
+        })
+    }))
 
     @Post()
     @UsePipes(new ValidationPipe({ transform: true }))
@@ -33,7 +47,7 @@ export class InventoryController {
             } else {
                 serviceRes = await this.inventoryService.findAll();
             }
-            return serviceRes // Enviar la respuesta como JSON
+            return serviceRes
         } catch (err) {
             throw new HttpException(`Couldn't found ${item} at inventory`, HttpStatus.NOT_FOUND);
         }
@@ -43,14 +57,10 @@ export class InventoryController {
     async findInvtryById(@Param('id', new ParseIntPipe({ errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE })) id: number): Promise<CreateInventoryDto[]> {
         try {
             const serviceRes = await this.inventoryService.findInvtryById(id);
-            if (Object.keys(serviceRes).length) {
-                return serviceRes;
-            }
-            else {
-                throw new HttpException(`registration ${id} does not exist`, HttpStatus.NOT_FOUND)
-            }
-        } catch (err) {
-            throw new NotFoundException(`Cannot get inventory with id ${id}`);
+            if (Object.keys(serviceRes).length) return serviceRes;
+        }
+        catch (err) {
+            throw new HttpException(`Cannot get inventory with id ${id}`, HttpStatus.NOT_FOUND);
         }
     }
 

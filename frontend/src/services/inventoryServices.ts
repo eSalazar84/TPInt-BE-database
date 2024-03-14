@@ -1,4 +1,4 @@
-export const URL_invtry = 'http://localhost:3000/inventory';
+export const URL_invtry = 'http://localhost:3010/inventory';
 import { DeleteResult } from "typeorm";
 import { Inventory, Items } from ".";
 

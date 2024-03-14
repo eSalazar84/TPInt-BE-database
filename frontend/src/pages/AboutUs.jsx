@@ -15,6 +15,10 @@ function Nosotros() {
                     </p>
                 </div>
             </div>
+            <form action="" method="post"></form>
+            <label htmlFor="">imagen a cargar</label>
+            <input type="file" name="" id="" />
+            <input type="button" value="submit" />
             <Footer />
         </>
     )

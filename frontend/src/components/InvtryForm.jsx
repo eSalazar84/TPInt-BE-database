@@ -102,7 +102,9 @@ function InvtryForm() {
           onChange={handleChange}
         />
       </label>
-      <label htmlFor="images" className="form-label">
+      <label htmlFor="images" className="form-label">Imagen descriptiva</label>
+      <input type="file" name="images" id="images" required  onChange={handleChange}/>
+      {/* <label htmlFor="images" className="form-label">
         Imagen descriptiva (copia y pega una ruta de internet)
         <input
           type="text"
@@ -112,7 +114,7 @@ function InvtryForm() {
           className="form-input"
           onChange={handleChange}
         />
-      </label>
+      </label> */}
 
       <div className="form-buttons">
         <input type="submit" value="Enviar" className="form-button" />
